@@ -1,6 +1,5 @@
 import boto3
 import pyotp
-import json
 
 from collections import namedtuple
 
@@ -8,6 +7,7 @@ from botocore.exceptions import ClientError
 from passlib.hash import pbkdf2_sha256
 
 from typing import Optional
+
 
 UserData = namedtuple("UserData", ["user_email", "user_id", "password", "mfa_key"])
 
@@ -66,8 +66,3 @@ def grab_user_data(user_email: str) -> Optional[UserData]:
     return None
 
 
-# def lamdba_handler(event, context):
-#
-#     return {
-#         "statusCode"
-#     }
