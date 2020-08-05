@@ -64,5 +64,3 @@ def grab_user_data(user_email: str) -> Optional[UserData]:
     except ClientError as e:
         return None
     return None
-
-
