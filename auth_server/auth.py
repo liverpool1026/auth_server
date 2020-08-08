@@ -35,7 +35,7 @@ def verify_mfa_code(key: str, entry: str) -> bool:
 
 
 def verify_password(password: str, expected: str) -> bool:
-    return hash_password(hash_password(password)) == expected
+    return pbkdf2_sha256.verify(password, expected)
 
 
 def verify_user(user_email: str, password: str, entry: str) -> Optional[int]:
